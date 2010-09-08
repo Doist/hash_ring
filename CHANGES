@@ -1,0 +1,12 @@
+0.95:
+Added get_node_pos and get_nodes.
+
+get_node_pos(string_key):
+Returns (node, position), where position is node's position on the ring.
+
+get_nodes(string_key)
+The generator is never ending and iterates through the ring
+starting at the correct position.
+
+0.9:
+Initial release.
