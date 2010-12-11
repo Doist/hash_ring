@@ -1,5 +1,5 @@
-cronwrap
-===========================================
+hash_ring
+=========
 
 Implements consistent hashing that can be used when
 the number of server nodes can increase or decrease (like in memcached).
@@ -25,7 +25,7 @@ for key distribution.
 Installing
 ===========
 
-To install cronwrap simply do::
+To install hash_ring simply do::
     
     $ sudo easy_install hash_ring
 
