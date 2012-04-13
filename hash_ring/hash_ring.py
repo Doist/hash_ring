@@ -128,13 +128,19 @@ class HashRing(object):
 
         pos = self.get_node_pos(string_key)
         for key in self._sorted_keys[pos:]:
-            val = distinct_filter(self.ring[key])
+            if distinct:
+                val = distinct_filter(self.ring[key])
+            else:
+                val = self.ring[key]
             if val:
                 yield val
 
         for i, key in enumerate(self._sorted_keys):
             if i < pos:
-                val = distinct_filter(self.ring[key])
+                if distinct:
+                    val = distinct_filter(self.ring[key])
+                else:
+                    val = self.ring[key]
                 if val:
                     yield val
 
