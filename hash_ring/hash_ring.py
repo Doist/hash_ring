@@ -32,9 +32,16 @@
     :license: BSD
 """
 
-import md5
 import math
+import sys
 from bisect import bisect
+
+if sys.version_info >= (2, 5):
+    import hashlib
+    md5_constructor = hashlib.md5
+else:
+    import md5
+    md5_constructor = md5.new
 
 class HashRing(object):
 
@@ -154,6 +161,6 @@ class HashRing(object):
                 | b_key[entry_fn(0)] )
 
     def _hash_digest(self, key):
-        m = md5.new()
+        m = md5_constructor()
         m.update(key)
         return map(ord, m.digest())
