@@ -1,4 +1,4 @@
-cronwrap
+hash_ring
 ===========================================
 
 Implements consistent hashing that can be used when
@@ -25,7 +25,7 @@ for key distribution.
 Installing
 ===========
 
-To install cronwrap simply do::
+To install hash_ring simply do::
     
     $ sudo easy_install hash_ring
 
@@ -64,3 +64,10 @@ How to use MemcacheRing::
     print mc.get('hello')
 
 The code should be clean and simple. Feel free to concat the author if you detect bugs.
+
+Compatibility
+=============
+
+This version of python hash_ring is compatible with:
+
+ * nodejs hash_ring (https://github.com/cypreess/node-hash-ring)
