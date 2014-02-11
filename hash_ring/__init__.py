@@ -1,6 +1,6 @@
-from hash_ring import HashRing
+from hash_ring.ring import HashRing
 
 try:
     from memcache_ring import MemcacheRing
-except ImportError, e:
+except ImportError as e:
     pass

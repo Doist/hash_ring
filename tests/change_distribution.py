@@ -1,9 +1,10 @@
 import os, sys
+
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 from hash_ring import HashRing
 
-text = open('tests/palindromes.txt').read()
+text = open('tests/palindromes.txt', encoding='utf-8').read()
 text = text.replace('\n', '').replace('a ', '').replace('an ', '')
 palindromes = [t.strip() for t in text.split(',')]
 
@@ -21,22 +22,22 @@ def create_sets(servers):
     return server_sets
 
 def print_distributions(name, server_sets):
-    print '\nDistribution of %s::' % name
+    print('\nDistribution of %s::' % name)
     for s in server_sets:
-        print '%s: %s' % (s, len(server_sets[s]))
+        print('%s: %s' % (s, len(server_sets[s])))
 
 def print_set_info(servers_init, servers_new):
     for init_server in servers_init:
         init_set = servers_init[init_server]
         new_set = servers_new[init_server]
 
-        print ''
-        print '%s: %s in init_set' %\
-                (init_server, len(init_set))
-        print '%s: %s in new_set' %\
-                (init_server, len(new_set))
-        print '%s: %s in both init_set and new_set' %\
-                (init_server, len(init_set.intersection(new_set)))
+        print('')
+        print('%s: %s in init_set' %\
+                (init_server, len(init_set)))
+        print('%s: %s in new_set' %\
+                (init_server, len(new_set)))
+        print('%s: %s in both init_set and new_set' %\
+                (init_server, len(init_set.intersection(new_set))))
 
 #--- Testing ----------------------------------------------
 init_servers = ['192.168.0.246:11212',

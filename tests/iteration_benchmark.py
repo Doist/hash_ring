@@ -21,5 +21,5 @@ init_servers = ['192.168.0.246:11212',
 ring = HashRing(init_servers)
 t_start = time.time()
 for n in ring.iterate_nodes('test'):
-    print n
-print 'Time elapsed %s' % (time.time() - t_start)
+    print(n)
+print('Time elapsed %s' % (time.time() - t_start))

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from hash_ring._compat import bytes
 """
     hash_ring
     ~~~~~~~~~~~~~~
@@ -76,10 +77,10 @@ class HashRing(object):
 
             factor = math.floor((40*len(self.nodes)*weight) / total_weight);
 
-            for j in xrange(0, int(factor)):
+            for j in range(0, int(factor)):
                 b_key = self._hash_digest( '%s-%s' % (node, j) )
 
-                for i in xrange(0, 3):
+                for i in range(0, 3):
                     key = self._hash_val(b_key, lambda x: x+i*4)
                     self.ring[key] = node
                     self._sorted_keys.append(key)
@@ -162,5 +163,5 @@ class HashRing(object):
 
     def _hash_digest(self, key):
         m = md5_constructor()
-        m.update(key)
-        return map(ord, m.digest())
+        m.update(bytes(key, 'utf-8'))
+        return list(map(ord, str(m.digest())))

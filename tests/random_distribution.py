@@ -1,5 +1,3 @@
-import time
-import math
 import os
 import sys
 import random
@@ -21,7 +19,7 @@ ring = HashRing(memcache_servers, weights)
 iterations = 100000
 
 def genCode(length=10):
-    chars = string.letters + string.digits
+    chars = string.ascii_letters + string.digits
     return ''.join([random.choice(chars) for i in range(length)])
 
 def random_distribution():
@@ -34,8 +32,8 @@ def random_distribution():
         counts[ring.get_node(word)] += 1
 
     for k in counts:
-        print '%s: %s' % (k, counts[k])
+        print('%s: %s' % (k, counts[k]))
 
-    print sum(counts.values())
+    print(sum(counts.values()))
 
 random_distribution()
