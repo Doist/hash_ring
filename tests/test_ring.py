@@ -4,7 +4,6 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 from hash_ring import HashRing
 
-
 #--- Global ----------------------------------------------
 memcache_servers = ['192.168.0.246:11212',
                     '192.168.0.247:11212',

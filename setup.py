@@ -18,7 +18,9 @@ def list_files(path):
             yield fn
 
 setup(name='hash_ring',
-      version = '1.3.1',
+      tests_require=['nose'],
+      test_suite='nose.collector',
+      version='1.3.1',
       author="Amir Salihefendic",
       author_email="amix@amix.dk",
       url="http://www.amix.dk/",
