@@ -63,7 +63,7 @@ How to use MemcacheRing::
     mc.set('hello', 'world')
     print mc.get('hello')
 
-The code should be clean and simple. Feel free to concat the author if you detect bugs.
+The code should be clean and simple. Feel free to contact the author if you detect bugs.
 
 Compatibility
 =============
